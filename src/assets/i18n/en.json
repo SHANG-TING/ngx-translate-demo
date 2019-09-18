@@ -1,0 +1,16 @@
+{
+  "title": "Angular NgxTranslate Demo",
+  "menu.home": "Home",
+  "menu.about": "About",
+  "menu.contact": "Concat",
+  "menu.language": "Language",
+  "menu.languageList.en": "EN",
+  "menu.languageList.zh-tw": "ZH-TW",
+  "menu.theme": "Theme",
+  "menu.themeList.normal": "Normal Mode",
+  "menu.themeList.dark": "Dark Mode",
+  "home.title": "Landscape of Taiwan",
+  "home.subTitle": "Private attractions",
+  "home.readmore": "Read More",
+  "home.share": "Share"
+}

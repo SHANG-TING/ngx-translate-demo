@@ -1,0 +1,75 @@
+<mat-toolbar color="primary" class="toolbar">
+  <mat-toolbar-row>
+
+    <!-- 手機版-->
+    <ng-container *ngIf="isMobile; else desktop">
+      <button class="hamburger mat-button" mat-button="" (click)="menu.toggle()">
+        <mat-icon class="mat-icon" aria-hidden="true">menu</mat-icon>
+        <div class="mat-button-ripple mat-ripple" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+      </button>
+      <h1 style="outline: 0px;" pointer margin-left [routerLink]="['/dashboard/home']">{{ 'title' | translate }}</h1>
+    </ng-container>
+
+    <!-- 電腦版-->
+    <ng-template #desktop>
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <a style="padding: 14px 12px 14px 12px;">
+            <h1 style="outline: 0px;" pointer margin-left [routerLink]="['/dashboard/home']">{{ 'title' | translate }}</h1>
+          </a>
+
+          <ng-container *ngFor="let item of value">
+            <button *ngIf="item.subMenus.length == 0; else hasSubMenus" [routerLink]="item.url" class="link-button"
+              mat-button>
+              {{ item.name | translate }}
+            </button>
+            <ng-template #hasSubMenus>
+              <button class="link-button" [matMenuTriggerFor]="sub_menu" mat-button>
+                {{ item.name | translate }}
+                <mat-icon>keyboard_arrow_down</mat-icon>
+              </button>
+              <mat-menu #sub_menu="matMenu" [overlapTrigger]="false">
+                <button *ngFor="let submenu of item.subMenus;" [routerLink]="submenu.url" mat-menu-item>
+                  {{ submenu.name | translate }}
+                </button>
+              </mat-menu>
+            </ng-template>
+          </ng-container>
+
+          <button class="link-button" [matMenuTriggerFor]="language" mat-button>
+            <figure class="flag" [ngClass]="{'flag-us': currentLang === 'en', 'flag-tw': currentLang === 'zh-tw'}" ></figure>
+          </button>
+
+          <mat-menu #language="matMenu" [overlapTrigger]="false">
+            <button mat-menu-item (click)="useLang('en')">
+              <figure class="flag flag-us"></figure>
+              <span class="countrylist-caption">{{ 'menu.languageList.en' | translate }}</span>
+            </button>
+            <button mat-menu-item (click)="useLang('zh-tw')">
+              <figure class="flag flag-tw"></figure>
+              <span class="countrylist-caption">{{ 'menu.languageList.zh-tw' | translate }}</span>
+            </button>
+          </mat-menu>
+
+          <button class="link-button" [matMenuTriggerFor]="theme" mat-button>
+            <figure class="flag" [ngClass]="{'flag-theme-sunny': !(isDarkTheme$ | async), 'flag-theme-moon': isDarkTheme$ | async}"></figure>
+          </button>
+
+          <mat-menu #theme="matMenu" [overlapTrigger]="false">
+            <button mat-menu-item (click)="toggleTheme(false)">
+              <figure class="flag flag-theme-sunny"></figure>
+              <span class="countrylist-caption">{{ 'menu.themeList.normal' | translate }}</span>
+            </button>
+            <button mat-menu-item (click)="toggleTheme(true)">
+              <figure class="flag flag-theme-moon"></figure>
+              <span class="countrylist-caption">{{ 'menu.themeList.dark' | translate }}</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </ng-template>
+
+  </mat-toolbar-row>
+</mat-toolbar>

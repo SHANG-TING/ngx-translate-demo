@@ -1,0 +1,7 @@
+{
+  "hello": "Hello! {{ value }}",
+  "world": "World",
+  "say": "Say {{ value }}",
+  "toggle": "Toggle",
+  "language": "Language"
+}

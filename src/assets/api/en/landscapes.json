@@ -1,0 +1,56 @@
+[
+  {
+    "id": 0,
+    "title": "WangYou Forest",
+    "introduction": "This mysterious forest, located in the center of Taiwan in Nantou is a photographer's dream. \"It had been raining the day before, and it was really humid and misty,\" the couple wrote on Instagram, \"so it was perfect for this kind of mystic picture.\"",
+    "thumbnail": "/assets/images/landscapes/0.jpg"
+  },
+  {
+    "id": 1,
+    "title": "Sun Moon Lake",
+    "introduction": "Sun Moon Lake is in the foothills of Taiwan’s Central Mountain Range. It’s surrounded by forested peaks and has foot trails. East of the lake, the Formosan Aboriginal Culture Village is a theme park with a section devoted to re-created indigenous villages. Displays here include centuries-old carved lintel pieces, handicrafts and weapons. The Sun Moon Lake Ropeway cable car offers views of the mountains and water.",
+    "thumbnail": "/assets/images/landscapes/1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Taroko National Park",
+    "introduction": "Taroko National Park, one of nine national parks in the country, spans three counties: Hualien, Nantou and Taichung City. The park's most famous feature, Taroko Gorge, is a stunningly dramatic, white marble canyon carved through the mountains by the Liwu River. Waterfalls pour down the cliff walls and the bright reds and oranges of the Chinese-style, Eternal Spring Shrine pop against the lush green landscape.",
+    "thumbnail": "/assets/images/landscapes/2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Green Island",
+    "introduction": "Green Island, also known by other names, is a small volcanic island in the Pacific Ocean about 33 km off the eastern coast of Taiwan. It is 15.092 km² at high tide and 17.329 km² at low tide, making it the Republic of China's seventh-largest island.",
+    "thumbnail": "/assets/images/landscapes/3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Qixing Mountain",
+    "introduction": "Qixing Mountain, also spelled Qixingshan or Chihsing Mountain, is a mountain in Beitou District, Taipei, Taiwan. It is located on the Datun Volcano Group and is the highest mountain in the city, at the rim of Taipei Basin. It is also the highest volcano in Taiwan.",
+    "thumbnail": "/assets/images/landscapes/4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Xitou Nature Education Area",
+    "introduction": "Xitou Nature Education Area or Xitou Bamboo Forest is a forest park in Lugu Village, Lugu Township, Nantou County, Taiwan.",
+    "thumbnail": "/assets/images/landscapes/5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "BuYan Pavilion",
+    "introduction": "The Old Caoling Tunnel is the first railroad tunnel renovated as a cycling tunnel in North Taiwan. The Old Tunnel is designed with a railroad museum concept.",
+    "thumbnail": "/assets/images/landscapes/6.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Xiao Wulai Waterfall",
+    "introduction": "Forested waterfall with 3 tiers, viewable from an observation deck or modern glass skywalk.",
+    "thumbnail": "/assets/images/landscapes/7.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Qingshui Cliff",
+    "introduction": "Qingshui Cliff is a 21 kilometer length of coastal cliffs averaging 800 meters above sea level in Xiulin Township, Hualien County, Taiwan. The tallest peak, Qingshui Mountain, rises 2408 meters directly from the Pacific Ocean.",
+    "thumbnail": "/assets/images/landscapes/8.jpg"
+  }
+]

@@ -1,0 +1,37 @@
+<div class='card-container'>
+  <div class='flippable-card' [ngClass]="{'flipped':flipped}">
+    <mat-card class="custom-card front" *ngIf="!flipped">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ landscape.title }}</mat-card-title>
+        <mat-card-subtitle>{{ 'home.subTitle' | translate }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="landscape.thumbnail" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          {{ landscape.introduction }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="active" mat-button [routerLink]="['/dashboard/landscapes/', landscape.id]">{{ 'home.readmore' | translate | uppercase }}</button>
+        <!-- <button class="active" mat-button (click)="flipped = !flipped">{{ landscape.id }}</button> -->
+      </mat-card-actions>
+    </mat-card>
+    <mat-card class="custom-card back" *ngIf="flipped">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ landscape.title }}</mat-card-title>
+        <mat-card-subtitle>{{ 'home.subTitle' | translate }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{ landscape.introduction }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="active" mat-button (click)='flipped = !flipped'>{{ 'home.readmore' | translate | uppercase }}</button>
+        <button class="active" mat-button>{{ 'home.share' | translate | uppercase }}</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

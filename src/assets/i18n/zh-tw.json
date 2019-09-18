@@ -1,0 +1,16 @@
+{
+  "title": "多語系實務分享",
+  "menu.home": "首頁",
+  "menu.about": "關於",
+  "menu.contact": "聯絡我",
+  "menu.language": "切換語系",
+  "menu.languageList.en": "英文",
+  "menu.languageList.zh-tw": "繁體中文",
+  "menu.theme": "切換主題",
+  "menu.themeList.normal": "一般主題",
+  "menu.themeList.dark": "暗黑主題",
+  "home.title": "台灣的景觀",
+  "home.subTitle": "私房景點",
+  "home.readmore": "閱讀更多",
+  "home.share": "分享"
+}

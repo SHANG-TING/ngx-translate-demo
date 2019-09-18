@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <!-- 用 translate  pipe來顯示，最常使用的方式 -->
+  <h1>{{ 'title' | translate }}</h1>
+
+  <!-- 也可以用 directive的方式 (key as attribute)-->
+  <p [translate]="'title'"></p>
+
+  <!-- directive 另一種方式 (key as content of element) -->
+  <p translate>title</p>
+</div>
+
+<div class="jumbotron">
+  <!-- 用 translate  pipe來顯示，最常使用的方式 -->
+  <h1>{{ 'hello' | translate: { value: 'world' | translate } }}</h1>
+
+  <!-- 也可以用 directive的方式 (key as attribute)-->
+  <p [translate]="'hello'" [translateParams]="{ value: 'world' | translate }"></p>
+
+  <!-- directive 另一種方式 (key as content of element) -->
+  <p translate [translateParams]="{ value: 'world' | translate }">hello</p>
+</div>
+
+<button type="button" (click)="sayHello()">{{ 'say' | translate: { value: 'hello' | translate: { value: 'world' | translate } } }}</button>
+<button type="button" (click)="toggleLang()">{{ 'toggle' | translate }}{{ 'language' | translate }}!</button>

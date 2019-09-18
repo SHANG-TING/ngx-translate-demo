@@ -1,0 +1,61 @@
+@import 'styles-variables';
+
+@import '~bootstrap/scss/bootstrap';
+@import 'style-reset';
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@import './styles/themes/black-theme.scss';
+@import './styles/themes/light-theme.scss';
+
+// import custom component themes here
+@import 'styles-reset.scss-theme';
+@import 'app/pages/home/page/landscape-item/landscape-container.component.scss-theme.scss';
+
+@mixin custom-components-theme($theme) {
+  @include my-styles-reset-theme($theme);
+  @include my-project-container-component-theme($theme);
+}
+
+.my-light-theme {
+  @include angular-material-theme($my-light-theme);
+  @include custom-components-theme($my-light-theme);
+}
+
+.my-dark-theme {
+  @include angular-material-theme($my-black-theme);
+  @include custom-components-theme($my-black-theme);
+}
+
+.flag {
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+}
+
+.countrylist-caption {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flag-tw {
+  background-image: url('/assets/images/tw.png');
+}
+
+.flag-us {
+  background-image: url('/assets/images/us.png');
+}
+
+.flag-theme-sunny {
+  background-image: url('/assets/images/sunny.png');
+}
+
+.flag-theme-moon {
+  background-image: url('/assets/images/moon.png');
+}

@@ -1,0 +1,7 @@
+{
+  "hello": "哈囉! {{ value }}",
+  "world": "世界",
+  "say": "說 {{ value }}",
+  "toggle": "切換",
+  "language": "語言"
+}

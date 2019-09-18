@@ -1,0 +1,23 @@
+<div [class]="theme">
+  <div class="mat-app-background">
+    <app-nav [isMobile]="isMobile$ | async" [menu]="snav" [value]="menuData"></app-nav>
+
+    <mat-sidenav-container>
+
+      <!-- 左側選單 -->
+      <mat-sidenav #snav [mode]="(isMobile$ | async) ? 'over' : 'side'" [fixedInViewport]="!isMobile$ | async">
+        <app-menu [menu]="snav" [value]="menuData" ></app-menu>
+      </mat-sidenav>
+
+      <!-- 內容部分 -->
+      <mat-sidenav-content cdkScrollable>
+        <section class="sidenav-content">
+          <router-outlet></router-outlet>
+        </section>
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+    <app-footer></app-footer>
+  </div>
+</div>
