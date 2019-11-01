@@ -7,7 +7,7 @@ import { ContentLayoutComponent } from './layout/content-layout/content-layout.c
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/auth/login',
+    redirectTo: '/dashboard/home',
     pathMatch: 'full'
   },
   {

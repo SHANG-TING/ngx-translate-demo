@@ -17,10 +17,6 @@ import {
   NavComponent
 } from './layout';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-
 const LAYOUT_COMPONENTS = [
   AuthLayoutComponent,
   ContentLayoutComponent,
@@ -28,6 +24,10 @@ const LAYOUT_COMPONENTS = [
   MenuComponent,
   NavComponent
 ];
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [AppComponent, LAYOUT_COMPONENTS],

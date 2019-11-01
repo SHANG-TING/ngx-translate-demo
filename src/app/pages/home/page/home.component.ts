@@ -29,6 +29,10 @@ export class HomeComponent {
     private landscapeApi: LandscapeService
   ) {}
 
+  alert() {
+    alert(this.translateService.instant('title'));
+  }
+
   openMyModal() {
     const modalRef = this.modalService.open(MyModalComponent, { size: 'lg' });
     modalRef.componentInstance.id = 1;

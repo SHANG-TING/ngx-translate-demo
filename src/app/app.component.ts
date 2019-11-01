@@ -36,6 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.translateService.onLangChange
       .pipe(takeUntil(this.destory$))
       .subscribe(({ lang, translations }) => {
+        console.log(lang, translations);
         this.title.setTitle(translations['title']);
         this.currentLang = lang as LangType;
       });

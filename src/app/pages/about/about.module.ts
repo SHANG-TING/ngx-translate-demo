@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, NgModule } from '@angular/core';
+import { LangType } from '@app/model/language.model';
 import {
   MissingTranslationHandler,
   MissingTranslationHandlerParams,
   TranslateCompiler,
   TranslateDefaultParser,
   TranslateLoader,
-  TranslateModule
+  TranslateModule,
+  TranslateParser
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from '@shared/shared.module';
@@ -24,7 +26,7 @@ export class CustomLoader implements TranslateLoader {
   constructor(_langPack: any) {
     this.langPack = _langPack;
   }
-  getTranslation(lang: string): Observable<any> {
+  getTranslation(lang: LangType): Observable<any> {
     // console.log(this.langPack[lang]);
     return of(this.langPack[lang]);
   }
@@ -44,22 +46,27 @@ export class CustomParser extends TranslateDefaultParser {
   public interpolate(expr: string | Function, params?: any): string {
     const result: string = super.interpolate(expr, params);
 
-    console.group('interpolate');
-    console.log('expr', expr);
-    console.log('params', params);
-    console.log('super.interpolate(expr, params)', result);
-    console.groupEnd();
+    // console.group('interpolate');
+    // console.log('expr', expr);
+    // console.log('params', params);
+    // console.log('super.interpolate(expr, params)', result);
+    // console.groupEnd();
 
-    return result + 'QAQ';
+    return result /* + 'QAQ'*/;
   }
   getValue(target: any, key: string): any {
     const keys = super.getValue(target, key);
 
-    console.group('getValue');
-    console.log('target', target);
-    console.log('key', key);
-    console.log('super.getValue(target, key)', keys);
-    console.groupEnd();
+    if (keys instanceof Array) {
+      console.log(keys);
+      return keys.join(' ');
+    }
+
+    // console.group('getValue');
+    // console.log('target', target);
+    // console.log('key', key);
+    // console.log('super.getValue(target, key)', keys);
+    // console.groupEnd();
 
     return keys;
   }
@@ -69,22 +76,18 @@ export class CustomParser extends TranslateDefaultParser {
 export class CustomCompiler extends TranslateCompiler {
   compile(value: string, lang: string): string | Function {
     console.group('compile');
-    console.log('value');
-    console.log(value);
-    console.log('lang');
-    console.log(lang);
+    console.log('value', value);
+    console.log('lang', lang);
     console.groupEnd();
     return value;
   }
 
   compileTranslations(translations: any, lang: string): any {
-    console.group('compileTranslations');
-    console.log('translations');
-    console.log(translations);
-    console.log('lang');
-    console.log(lang);
-    console.groupEnd();
     translations['title'] = 'ABC';
+    console.group('compileTranslations');
+    console.log('translations', translations);
+    console.log('lang', lang);
+    console.groupEnd();
     return translations;
   }
 }
@@ -103,11 +106,8 @@ export class CustomCompiler extends TranslateCompiler {
         provide: TranslateLoader,
         useFactory: () => new CustomLoader(langPack)
       },
-      // parser: { provide: TranslateParser, useClass: CustomParser },
-      compiler: {
-        provide: TranslateCompiler,
-        useClass: CustomCompiler
-      },
+      parser: { provide: TranslateParser, useClass: CustomParser },
+      compiler: { provide: TranslateCompiler, useClass: CustomCompiler },
       missingTranslationHandler: {
         provide: MissingTranslationHandler,
         useClass: CustomHandler
